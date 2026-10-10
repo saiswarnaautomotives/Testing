@@ -1,7 +1,7 @@
 /* Minimal service worker: makes the app installable.
    Network-first for this site's own files only; Google Sheets API calls are never cached. */
 var CACHE = 'logbook-shell-v1';
-var SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
+var SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).catch(function () {}));
